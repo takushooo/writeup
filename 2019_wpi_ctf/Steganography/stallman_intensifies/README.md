@@ -1,12 +1,12 @@
-# WPICTF 2019 `*Stallman intensifies* []`
+# WPICTF 2019 `*Stallman intensifies* [stg 100]` writeup
 
 ## 問題
 ![Challenge](Challenge.PNG)
 
 ## 解答
-中身は5枚のJPEG画像とpass付の7zファイル
+リンク[1.](https://drive.google.com/file/d/1VrNgsfcD224vcUdpUAnUSyWvoL8nZ9zF/view?usp=sharing)[2.](https://www.dropbox.com/s/xhab7zms5n35867/stallman-intensifies.zip?dl=0)からダウンロードできるzipファイルを解凍すると，中身は5枚のJPEG画像とpass付の7zファイル．
 
-7zファイルが解凍できればflag GETと予想して，5枚のJPEG画像を調べる．
+7zファイルが解凍できればflag GETだろうと予想して，5枚のJPEG画像を調べる．
 
 [青空白猫](https://digitaltravesia.jp/usamimihurricane/webhelp/_RESOURCE/MenuItem/another/anotherAoZoraSiroNeko.html)でJPEG画像を調べると，うち2枚の画像にsteghideの可能性があるらしい．
 
