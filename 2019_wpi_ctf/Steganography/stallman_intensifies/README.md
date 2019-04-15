@@ -26,9 +26,14 @@
 次の日，"**sstv signal**"なるものが使われていたというチャットを公式discordで見かける．
 調べてみると，sstvという狭帯域での画像送信方法らしく，過去のCTF問題にもいくつかあったっぽい．
 それらのWriteupを眺めると，[Qsstv](https://charlesreid1.com/wiki/Qsstv)というオープンソースプログラムを使えばsstv signalの画像化ができるらしい．
-[Audacity](https://www.audacityteam.org/)で左側の音声を分離してからQsstvを通してみると，ノイズが一番ひどくなったタイミングでflagが出力された．画像が生成されていく様子はちょっと怖かった．
+[Audacity](https://www.audacityteam.org/)で左側の音声を分離してからQsstvを通してみると，ノイズが一番ひどくなったタイミングでflag画像が出力された．画像が生成されていく様子はちょっと怖かった．
 
-![flag](Answer.png "WPI{im_a_h@m_0per@10r_now_!_73}")
+<details><summary>flag画像</summary><div>
+
+![flag](Answer.png)
+WPI{im_a_h@m_0per@10r_now_!_73} (たぶん？)
+
+</div></details>
 
 ## 反省
 1つの方針にとらわれて時間が無くなってしまった．
