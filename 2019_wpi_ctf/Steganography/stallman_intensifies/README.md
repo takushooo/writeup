@@ -1,10 +1,10 @@
-# WPICTF 2019 `*Stallman intensifies* [stg 100]` writeup
+# WPICTF 2019 `*stallman intensifies* [stg 100]` writeup
 
 ## 問題
 ![Challenge](Challenge.PNG)
 
 ## 解答
-リンク[1.](https://drive.google.com/file/d/1VrNgsfcD224vcUdpUAnUSyWvoL8nZ9zF/view?usp=sharing)[2.](https://www.dropbox.com/s/xhab7zms5n35867/stallman-intensifies.zip?dl=0)からダウンロードできるzipファイルを解凍すると，中身は5枚のJPEG画像とpass付の7zファイル．
+リンク[[1.]](https://drive.google.com/file/d/1VrNgsfcD224vcUdpUAnUSyWvoL8nZ9zF/view?usp=sharing)[[2.]](https://www.dropbox.com/s/xhab7zms5n35867/stallman-intensifies.zip?dl=0)からダウンロードできるzipファイルを解凍すると，中身は5枚のJPEG画像とpass付の7zファイル．
 
 7zファイルが解凍できればflag GETだろうと予想して，5枚のJPEG画像を調べる．
 
@@ -45,7 +45,7 @@ WPI{im_a_h@m_0per@10r_now_!_73} (たぶん？)
 
 ## 反省
 1つの方針にとらわれて時間が無くなってしまった．
-結局は最初に感じた違和感が一番解答に近いものだったので，感覚はやっぱり大事．(サブカテゴリはMiscだったし)
+結局は最初に感じた違和感が一番解答に近いものだったので，感覚はやっぱり大事(サブカテゴリはMiscだったし).
 今回見つけたQsstvは今後も役立ちそう．右耳の音声を使ってsstv signalだけをきれいに抽出する必要があるかとも思ったけどそのままいけたので，結構気楽に使えそうな印象だった．
 
 ## tool
