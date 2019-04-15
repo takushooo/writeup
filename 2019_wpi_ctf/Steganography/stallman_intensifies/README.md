@@ -6,7 +6,7 @@
 7zファイルが解凍できればflag GETと予想して，5枚のJPEG画像を調べる．
 
 [青空白猫](https://digitaltravesia.jp/usamimihurricane/webhelp/_RESOURCE/MenuItem/another/anotherAoZoraSiroNeko.html)でJPEG画像を調べると，2枚の画像にsteghideの可能性があるらしい．
-
+　
 `exiftool`，`file`，`exiftool`，`steghide`，`strings`コマンドを一通り試していく．
 
 ![Imgur](https://i.imgur.com/JR0GFRe.jpg)
