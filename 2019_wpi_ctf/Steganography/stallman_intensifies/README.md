@@ -6,7 +6,7 @@
 7zファイルが解凍できればflag GETと予想して，5枚のJPEG画像を調べる．
 
 [青空白猫](https://digitaltravesia.jp/usamimihurricane/webhelp/_RESOURCE/MenuItem/another/anotherAoZoraSiroNeko.html)でJPEG画像を調べると，2枚の画像にsteghideの可能性があるらしい．
-　
+
 `exiftool`，`file`，`exiftool`，`steghide`，`strings`コマンドを一通り試していく．
 
 ![Imgur](https://i.imgur.com/JR0GFRe.jpg)
@@ -21,12 +21,16 @@
 改めてちゃんと聞こうと思ってヘッドホンをつけると音がほとんど右側からしか聞こえず，左からは「ｶﾞﾋﾟｶﾞﾋﾟｶﾞﾋﾟｰ」とノイズのようなものが聞こえる．おかしい．
 
 ......が，音声のSteganography問題をやったことがなかったため，この違和感はいつのまにか忘れてフレームの切り出しなどに終始してしまい，お手上げでタイムアップ．
-緑一色のフレームなどそれっぽいものもあってなかなか諦めきれなかった．
+
+(緑一色のフレームなどそれっぽいものもあってなかなか諦めきれなかった．かなり緑だった．)
 
 次の日，"**sstv signal**"なるものが使われていたというチャットを公式discordで見かける．
 調べてみると，sstvという狭帯域での画像送信方法らしく，過去のCTF問題にもいくつかあったっぽい．
-それらのWriteupを眺めると，[Qsstv](https://charlesreid1.com/wiki/Qsstv)というオープンソースプログラムを使えばsstv signalの画像化ができるらしい．
-[Audacity](https://www.audacityteam.org/)で左側の音声を分離してからQsstvを通してみると，ノイズが一番ひどくなったタイミングでflag画像が出力された．画像が生成されていく様子はちょっと怖かった．
+
+それらのWriteupを眺めると，[Qsstv](https://charlesreid1.com/wiki/Qsstv)というオープンソースプログラムを使えばsstv signalの画像化ができるらしいので，
+[Audacity](https://www.audacityteam.org/)で左側の音声を分離してからQsstvを通す．
+
+画像が生成されていく様子は音も相まって個人的になかなか怖かったが，ノイズが一番ひどくなったタイミングでflag画像が無事出力された．
 
 <details><summary>flag画像</summary><div>
 
@@ -38,6 +42,7 @@ WPI{im_a_h@m_0per@10r_now_!_73} (たぶん？)
 ## 反省
 1つの方針にとらわれて時間が無くなってしまった．
 結局は最初に感じた違和感が一番解答に近いものだったので，感覚はやっぱり大事．(サブカテゴリはMiscだったし)
+今回見つけたQsstvは今後も役立ちそう．右耳の音声を使ってsstv signalだけをきれいに抽出する必要があるかとも思ったけどそのままいけたので，結構気楽に使えそうな印象だった．
 
 ## tool
 + [汎用ファイルアナライザ "青い空を見上げればいつもそこに白い猫](https://digitaltravesia.jp/usamimihurricane/webhelp/_RESOURCE/MenuItem/another/anotherAoZoraSiroNeko.html)
