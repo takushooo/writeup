@@ -40,7 +40,14 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 <details><summary>I-the-almighty-quiz-makerの遺言</summary><div>
 
 ```
-Hello everyone, I am Gilbert. Everyone thought that I was killed, but actually I survived. Now that I have no cash with me and I’m trapped in another country. I can't contact Violet now. She must be desperate to see me and I don't want her to cry for me. I need to pay 300 for the train, and 88 for the meal. Cash or battlenet point are both accepted. I don't play the Hearthstone, and I don't even know what is Rastakhan's Rumble.
+Hello everyone, I am Gilbert.
+Everyone thought that I was killed, but actually I survived.
+Now that I have no cash with me and I’m trapped in another country.
+I can't contact Violet now.
+She must be desperate to see me and I don't want her to cry for me.
+I need to pay 300 for the train, and 88 for the meal.
+Cash or battlenet point are both accepted.
+I don't play the Hearthstone, and I don't even know what is Rastakhan's Rumble.
 ```
 </div></details>
 
@@ -58,7 +65,7 @@ binwalkで調べると，手に入ったflag.zipの中身は`flag.png`と`last w
 
 
 ### 自動既知平文攻撃人形
-上の遺言で`last word.txt`を作ると，flag.zip内の`last word.txt`のファイルサイズと一致したので，確実に合っていると思いそのまま実行する．
+上の遺言の改行をなくして`last word.txt`を作ると，flag.zip内の`last word.txt`のファイルサイズと一致したので，確実に合っていると思いそのまま実行する．
 
 `pkcrack -C flag.zip -c last\ words.txt -p last\ words.txt -d output.zip`
 
