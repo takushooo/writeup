@@ -17,12 +17,13 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 ```
 
 中身は`flag.zip`と`Anime_Intro.doc`の2つで，
-`unzip`で解凍すると，`Anime_Intro.doc`だけは解凍できる．
+`Anime_Intro.doc`の方はパスワードがかかっていないので`unzip`で解凍できる．
 
 ### 第1話「~~愛してる~~」と自動手記人形
 
-内容はヴァイオレット・エヴァーガーデンの話．
-まるごと検索すると，第1話のあらすじらしい．
+Anime_Intro.docから確認していく．
+内容はヴァイオレット・エヴァーガーデンの話で，
+まるごと検索すると第1話のあらすじらしい．
 ギルベルト少佐の名前に訂正線が引いてあり，"I-the-almighty-quiz-maker"に書き換えられている．
 自分のことをギルベルト少佐だと勘違いしたオタク，またの名をI-the-almighty-quiz-maker．この問題は彼の遺言探しから始まる．
 
@@ -30,7 +31,7 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 目をつけるところは間違っていないはずなので少し考えると，少佐がオタクの二つ名に書き換えられていることから，同様に"I love you"の後ろにもオタクが書き換えた文章が本来はあるはずだと思い至った．
 
 以前PowerPointの問題か何かで聞いたことがあったメタデータの見方を思い出したので，wordも同じだろうと考える．
-変更履歴を見るため拡張子を変えて`Anime_Intro.zip`にして解凍し，`/word/document.xml`からAnime_Intro.docのメタデータを確認する．
+変更履歴を見るため拡張子を変えて`Anime_Intro.zip`にして解凍し，`Anime_Intoro/word/document.xml`からAnime_Intro.docのメタデータを確認する．
 「"I love you」に続いて文章があるようなので，位置的にも正しい．
 もっと楽な方法があるのかもしれないが手作業でタグを消すと，以下の文章が現れる．
 
