@@ -17,7 +17,7 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 ```
 
 中身は`flag.zip`と`Anime_Intro.doc`の2つで，
-`Anime_Intro.doc`の方はパスワードがかかっていないので`unzip`で解凍できる．
+`Anime_Intro.doc`の方はパスワードがかかっていないので，`unzip`で解凍できる．
 
 ### 第1話「~~愛してる~~」と自動手記人形
 
