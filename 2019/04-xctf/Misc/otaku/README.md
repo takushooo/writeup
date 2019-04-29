@@ -1,7 +1,7 @@
 # *CTF 2019 `otaku [Misc]` writeup
 
 ## 問題
-![Challenge](Challenge.PNG)
+![Challenge](Challenge.png)
 
 ## 解答
 [https://adworld.xctf.org.cn/media/uploads/task/82598457d27f4149a96e2cc38f49c873.zip](https://adworld.xctf.org.cn/media/uploads/task/82598457d27f4149a96e2cc38f49c873.zip)からzipファイルがダウンロードできる．
@@ -24,19 +24,21 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 内容はヴァイオレット・エヴァーガーデンの話．
 まるごと検索すると，第1話のあらすじらしい．
 ギルベルト少佐の名前に訂正線が引いてあり，"I-the-almighty-quiz-maker"に書き換えられている．
-自分のことをギルベルト少佐だと勘違いしたオタク，またの名をI-the-almighty-quiz-maker．この問題は彼の遺言探しから始まるらしい．
+自分のことをギルベルト少佐だと勘違いしたオタク，またの名をI-the-almighty-quiz-maker．この問題は彼の遺言探しから始まる．
 
 本来"I love you"が入っているはずの空白部分が彼のlast wishであり，`flag.zip`のパスになるのだろうと思って調べると，普通に白文字で"I love you"とそのまま書いてあった．
 目をつけるところは間違っていないはずなので少し考えると，少佐がオタクの二つ名に書き換えられていることから，同様に"I love you"の後ろにもオタクが書き換えた文章が本来はあるはずだと思い至った．
 
-変更履歴を見るために，拡張子を変えて`Anime_Intro.zip`にして解凍し，`/word/document.xml`からAnime_Intro.docのメタデータを確認する．
+以前PowerPointの問題か何かで聞いたことがあったメタデータの見方を思い出したので，wordも同じだろうと考える．
+変更履歴を見るため拡張子を変えて`Anime_Intro.zip`にして解凍し，`/word/document.xml`からAnime_Intro.docのメタデータを確認する．
 「"I love you」に続いて文章があるようなので，位置的にも正しい．
 もっと楽な方法があるのかもしれないが手作業でタグを消すと，以下の文章が現れる．
 
-**(注) 文章はヴァイオレット・エヴァーガーデンのネタバレを含みます．**
+**(注) 以下の文章はヴァイオレット・エヴァーガーデンのネタバレを含みます．**
 僕みたいに「原作は読んでないけどアニメは見たよ」「2020年の新作映画も楽しみだね」って人は，文章の内容自体は問題にほとんど関係ないので読み飛ばしてください．ネタバレはどちらかといえば調べてた途中に読んだwikipediaのせいですが，怒る人もいるからよくないですね．
 
 <details><summary>I-the-almighty-quiz-makerの遺言</summary><div>
+
 ```
 Hello everyone, I am Gilbert. Everyone thought that I was killed, but actually I survived. Now that I have no cash with me and I’m trapped in another country. I can't contact Violet now. She must be desperate to see me and I don't want her to cry for me. I need to pay 300 for the train, and 88 for the meal. Cash or battlenet point are both accepted. I don't play the Hearthstone, and I don't even know what is Rastakhan's Rumble.
 ```
@@ -66,7 +68,7 @@ binwalkで調べると，手に入ったflag.zipの中身は`flag.png`と`last w
 
 **The text is GBK encoding.**
 
-つまりUTF-8のままでは別のファイルになっているからダメだったということっぽいので，手元のlast words.txtの文字コードをGBKに変換する．
+つまりUTF-8のままでは別のファイルになっているからダメだったということらしいので，手元のlast words.txtの文字コードをGBKに変換する．
 今度こそいけるだろうと再度pkcrackを実行するも，まだ成功しない．
 
 ファイルサイズとエンコードも合わせているので，textファイル自体は合っているはずである．
@@ -74,20 +76,20 @@ binwalkで調べると，手に入ったflag.zipの中身は`flag.png`と`last w
 そもそもpkcrackがどういう動作をしているのかよくわかってなかったので少し調べてみると，-p オプションで渡したファイルを圧縮してからクラッキングが行われているらしい．
 つまりpkcrackは渡したtextファイルを自動で圧縮しているということになる．
 どういう形式で圧縮しているのかは分からないが，
-「そういえば普通にunzipしただけだとflag.zipが壊れてたなぁ」と気になったので，
-手元でlast words.txtを圧縮してから`zipinfo`でzipファイルを確認していく．
+「そういえば最初普通にunzipしただけだとflag.zipが壊れてたなぁ」と気になったので，
+手元でいつもの通りlast words.txtを圧縮してから`zipinfo`でzipファイルを確認していく．
 
 ```
-ishioka@/mnt/c/Users/ishioka/Desktop/workspace/CTF/2019_04_xctf/Misc/otaku4
+ishioka@/mnt/c/Users/ishioka/Desktop/workspace/CTF/2019_04_xctf/Misc/otaku
 $ zip last\ words.zip last\ words.txt
   adding: last words.txt (deflated 37%)
-ishioka@/mnt/c/Users/ishioka/Desktop/workspace/CTF/2019_04_xctf/Misc/otaku4
+ishioka@/mnt/c/Users/ishioka/Desktop/workspace/CTF/2019_04_xctf/Misc/otaku
 $ zipinfo last\ words.zip
 Archive:  last words.zip
 Zip file size: 451 bytes, number of entries: 1
 -rwxrwxrwx  3.0 unx      432 tx defN 19-Feb-27 00:28 last words.txt
 1 file, 432 bytes uncompressed, 273 bytes compressed:  36.8%
-ishioka@/mnt/c/Users/ishioka/Desktop/workspace/CTF/2019_04_xctf/Misc/otaku4
+ishioka@/mnt/c/Users/ishioka/Desktop/workspace/CTF/2019_04_xctf/Misc/otaku
 $ zipinfo flag.zip
 Archive:  flag.zip
 Zip file size: 3584144 bytes, number of entries: 2
@@ -98,6 +100,7 @@ Zip file size: 3584144 bytes, number of entries: 2
 
 よくわからんけどなんか別のっぽい...
 
+少し調べてみても，調べ方が悪いのかそもそも記事がないのか，あまりヒットしない．
 ここで思い出したのが壊れてないflag.zipをunzipした時の文字化け出力．
 
 ```
@@ -109,7 +112,8 @@ Archive:  flag.zip
 [flag.zip] flag.png password:
 ```
 
-WinRARなるものを使って圧縮してそう．[WinRAR](https://www.winrarjapan.com/download)をダウンロード，それを使ってzipに圧縮してみる．
+WinRARなるものを使って圧縮してそうなので，[WinRAR](https://www.winrarjapan.com/download)をダウンロード．
+それを使ってzipに圧縮してみる．
 書庫形式を"ZIP"にして，圧縮方式はひとまず"標準"にしておく．
 これをzipinfoで確認すると，
 
@@ -152,12 +156,13 @@ Finished on Sun Apr 28 19:15:15 2019
 あとは`flag.png`に書いてあるflagを確認して，
 
 ![Imgur](https://i.imgur.com/oIzVHEe.png)
-`.........ヴァイオレットちゃんかわいいなぁ......ふぅ.........`
+`.........ヴァイオレットちゃんはかわいいなぁ......ふぅ.........`
 
 ひとまず手元で簡単にできるsteganographyのチェックをひと通り終え，心が折れたので作業中断．
 
 早く大会終わって解放されないかなーと思いながらご飯を食べていると，チームメンバーからflagゲットの連絡が入った．
-[Steganography Online](https://stylesuxx.github.io/steganography/)に画像を放り込んだらflagがでたらしい．もはや悔しいやら嬉しいやらもなく，解放してもらえたことにただただ感謝．
+[Steganography Online](https://stylesuxx.github.io/steganography/)に画像を放り込んだらflagがでたらしい．
+もはや悔しいやら嬉しいやらもなく，解放してもらえたことにただただ感謝．
 
 果報は飯食って待て．
 
@@ -171,7 +176,7 @@ Finished on Sun Apr 28 19:15:15 2019
 いろいろやったので備忘録として早めにwriteupを書いたものの，
 気になっていることもいくつかあって，
 WinRARの試用期間が終わっても同じことができるのかどうかも不安だし，
-最後のステガノはオンラインツールでできるなら手元でもできたんだろうなと感じている．
+最後のステガノはオンラインツールでできるなら手元でもできるんだろうなと感じている．
 今後のためにも，暇を見てもう少し調べてみたい問題ではある．
 
 何かわかれば追記します．何かわかっていれば教えてください．
