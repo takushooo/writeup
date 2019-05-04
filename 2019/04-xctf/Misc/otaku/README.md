@@ -193,6 +193,8 @@ WinRARの試用期間が終わっても同じことができるのかどうか�
 ## 追記
 普通にzstegで出た......
 
+ステガノの問題やり始めてから今までに使ったことがなかったから完全に忘れてた．
+
 ```
 $ zsteg flag.png
 /usr/lib/ruby/2.5.0/open3.rb:199: warning: Insecure world writable dir /home/ishioka/.local/bin in PATH, mode 040777
