@@ -1,7 +1,7 @@
 # SECCON 2019 Online CTF `Sandstorm [Misc]` writeup
 
 ## 問題
-![Challenge](Challenge.png)
+![Challenge](fig/Challenge.png)
 
 ## 解答
 
