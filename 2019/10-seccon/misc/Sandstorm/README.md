@@ -1,7 +1,7 @@
 # SECCON 2019 Online CTF `Sandstorm [Misc]` writeup
 
 ## 問題
-![Challenge](fig/Challenge.png)
+![Challenge](./fig/Challenge.png)
 
 ## 解答
 
@@ -35,7 +35,7 @@ exif情報のInterlaceにAdamがいるので目をつける．
 
 [Wiki: Adam7 algorithm](https://en.wikipedia.org/wiki/Adam7_algorithm)
 
-![Adam](fig/Adam7_passes.gif)
+![Adam](./fig/Adam7_passes.gif)
 
 何段階目かの処理のところで文字が浮かび上がってきそうな予感．．．
 
@@ -45,7 +45,7 @@ exif情報のInterlaceにAdamがいるので目をつける．
 ```
 convert sandstorm.png -filter Point -fx "!(i%8)*!(j%8)*u" sandstorm-adam7-1.png
 ```
-![adam7-1.png](fig/sandstorm-adam7-1.png)
+![adam7-1.png](./fig/sandstorm-adam7-1.png)
 
 文字化けかと思ったら名物QRコードだった．
 
@@ -54,7 +54,7 @@ convert sandstorm.png -filter Point -fx "!(i%8)*!(j%8)*u" sandstorm-adam7-1.png
 ```
 convert  sandstorm.png -filter Point -fx "p{i-i%8,j-j%8}" sandstorm-adam7-1-cmpl.png
 ```
-![adam7-1-cmpl.png](fig/sandstorm-adam7-1-cmpl.png)
+![adam7-1-cmpl.png](./fig/sandstorm-adam7-1-cmpl.png)
 
 QRコードを読み込んだらflag GET
 <details><summary>flag</summary><div>
