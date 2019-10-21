@@ -47,6 +47,7 @@ convert sandstorm.png -filter Point -fx "!(i%8)*!(j%8)*u" sandstorm-adam7-1.png
 ```
 ![adam7-1.png](./fig/sandstorm-adam7-1.png)
 
+一発でヒット．
 文字化けかと思ったら名物QRコードだった．
 
 このままでも手元のスマホでは読めてしまってQRコードすごいなぁと思いつつ一応補完．
