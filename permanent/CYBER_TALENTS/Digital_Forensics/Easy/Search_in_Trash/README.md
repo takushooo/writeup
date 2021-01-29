@@ -1,4 +1,4 @@
-# Search_in_Trash
+# Search in Trash
 ## 問題文
 
 My HDD was destroyed in an accident. However, I was able to recover my recycle bin file . Can you know the flag ?
@@ -11,7 +11,7 @@ wget https://s3-eu-west-1.amazonaws.com/hubchallenges/Forensics/search-trash
 ## FLAG
 
 ```
-FLAG(701_L@b$_DR_DFIR)
+FLag{Fat_32_DF_2}
 ```
 
 ## 解法
